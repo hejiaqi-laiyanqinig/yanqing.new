@@ -21,8 +21,8 @@
     "beautify",
     "javascript"
   ],
-  "engines" : {
-    "node" : ">4.0"
+  "engines": {
+    "node": ">4.0"
   },
   "author": "ChiChou <zhi.zhou@chaitin.com>",
   "license": "MIT",
@@ -35,12 +35,12 @@
     "coveralls": "^2.11.3",
     "istanbul": "^0.4.2",
     "jshint": "^2.8.0",
-    "mocha": "^2.2.5"
+    "mocha": "^3.2.0"
   },
   "dependencies": {
     "colors": "^1.1.2",
     "escodegen": "^1.6.1",
-    "esprima": "^2.4.1",
+    "esprima": "^3.1.3",
     "estraverse": "^4.1.0"
   }
 }
