@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony --harmony_arrow_functions
+#!/usr/bin/env node 
 
 'use strict';
 
