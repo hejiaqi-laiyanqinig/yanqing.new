@@ -9,6 +9,8 @@
 
 **注意：此项目包含真实恶意程序样本，可能会引起安全软件报告。**
 
+**这个工具实现得非常幼稚，如果您有 PL 的基础，建议阅读和使用 http://prepack.io/**
+
 ## 快速上手
 
 `git clone https://github.com/ChiChou/etacsufbo.git` 下载项目
