@@ -15,13 +15,13 @@ const deobfuscator = require('./');
 //   node deobfuscator.js input [output]
 //
 
-let { argv } = process
+let { argv } = process;
 
 if (argv.length < 3) {
   const opt = {
     input: process.stdin,
     output: process.stdout
-  }
+  };
   const rl = readline.createInterface(opt)
     .on('line', input => {
       try {
@@ -32,18 +32,18 @@ if (argv.length < 3) {
         }
       }
 
-      rl.prompt()
-    })
+      rl.prompt();
+    });
 
-  rl.setPrompt('> ')
-  rl.prompt()
+  rl.setPrompt('> ');
+  rl.prompt();
 
 } else {
-  let src = argv[2], dst = argv[3]
-  let code = fs.readFileSync(src).toString('utf8')
+  let src = argv[2], dst = argv[3];
+  let code = fs.readFileSync(src).toString('utf8');
 
   if (dst)
-    fs.writeFile(dst, code)
+    fs.writeFile(dst, code);
   else
-    console.log(code.green)
+    console.log(code.green);
 }
