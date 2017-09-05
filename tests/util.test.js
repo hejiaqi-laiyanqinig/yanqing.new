@@ -24,7 +24,7 @@ describe('util functions', function() {
 
     expect(util.isStatic(expression('Math.cos(65536)'))).to.be.false;
     expect(util.isStaticArguments(expression('Math.cos(Date.now())'))).to.be.false;
-    
+
     done();
   });
 
@@ -33,7 +33,7 @@ describe('util functions', function() {
     expect(util.parseStatic(deepArray)).to.deep.equal(eval(CODE_DEEP_ARRAY));
     expect(util.parseStatic(deepDict)).to.deep.equal(eval(CODE_DEEP_DICT));
     expect(util.parseStatic(regexp)).to.deep.equal(eval(CODE_REGEX));
-    
+
     done();
   });
 

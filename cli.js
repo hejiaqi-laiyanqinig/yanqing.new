@@ -1,8 +1,9 @@
-#!/usr/bin/env node 
+#!/usr/bin/env node
 
 'use strict';
 
 const fs = require('fs');
+const readline = require('readline');
 
 require('colors');
 
@@ -14,31 +15,35 @@ const deobfuscator = require('./');
 //   node deobfuscator.js input [output]
 //
 
-if ([3, 4].indexOf(process.argv.length) > -1) {
-  let src = process.argv[2];
-  let dst = process.argv[3];
+let { argv } = process
 
-  let code = fs.readFileSync(src).toString('utf8');
-  code = deobfuscator.clean(code);
-  if (dst)
-    fs.writeFile(dst, code);
-  else
-    console.log(code.green);
-
-} else if (process.argv.length === 2) {
-  process.stdin.setEncoding('utf8');
-  process.stdin.on('readable', function() {
-    var chunk = process.stdin.read();
-    if (chunk && chunk.length) {
+if (argv.length < 3) {
+  const opt = {
+    input: process.stdin,
+    output: process.stdout
+  }
+  const rl = readline.createInterface(opt)
+    .on('line', input => {
       try {
-        console.log(deobfuscator.clean(chunk).green);
+        console.log(deobfuscator.clean(input).green);
       } catch (ex) {
         if (ex.lineNumber && ex.column) {
           console.log(`Error: ${ex.description} at line ${ex.lineNumber}, col ${ex.column}`.red);
         }
       }
-    }
-    process.stdout.write('> ');
-  });
-}
 
+      rl.prompt()
+    })
+
+  rl.setPrompt('> ')
+  rl.prompt()
+
+} else {
+  let src = argv[2], dst = argv[3]
+  let code = fs.readFileSync(src).toString('utf8')
+
+  if (dst)
+    fs.writeFile(dst, code)
+  else
+    console.log(code.green)
+}
