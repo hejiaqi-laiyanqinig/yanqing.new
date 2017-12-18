@@ -45,5 +45,5 @@ if (argv.length < 3) {
   if (dst)
     fs.writeFile(dst, code);
   else
-    console.log(code.green);
+    console.log(deobfuscator.clean(code).green);
 }
