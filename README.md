@@ -7,7 +7,7 @@
 
 一个简易 Javascript 反混淆工具，基于抽象语法树分析和修改实现。
 
-**这个工具已废弃。请移步类似工具 https://github.com/mindedsecurity/JStillery **
+**这个工具已废弃。请移步类似工具 https://github.com/mindedsecurity/JStillery**
 
 **如果您有 PL 的基础，建议阅读和使用 http://prepack.io/**
 
