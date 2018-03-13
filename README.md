@@ -7,9 +7,9 @@
 
 一个简易 Javascript 反混淆工具，基于抽象语法树分析和修改实现。
 
-**注意：此项目包含真实恶意程序样本，可能会引起安全软件报告。**
+**这个工具已废弃。请移步类似工具 https://github.com/mindedsecurity/JStillery **
 
-**这个工具实现得非常幼稚，如果您有 PL 的基础，建议阅读和使用 http://prepack.io/**
+**如果您有 PL 的基础，建议阅读和使用 http://prepack.io/**
 
 ## 快速上手
 
